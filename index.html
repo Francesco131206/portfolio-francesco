@@ -9,6 +9,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
 
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="logosito.png">
+
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -75,7 +78,7 @@
         <div class="stat-icon">🌐</div>
         <div>
           <div class="stat-label">Lingue</div>
-          <div class="stat-value">Italiano (madre lingua) · Inglese B1</div>
+          <div class="stat-value">Italiano (madre lingua) · Inglese </div>
         </div>
       </div>
     </div>
@@ -280,18 +283,7 @@
     <div class="footer-right">Costruito con HTML, CSS e curiosità · Belluno 🏔️</div>
   </footer>
  
-  <script>
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => entry.target.classList.add('visible'), i * 80);
-        }
-      });
-    }, { threshold: 0.1 });
-    reveals.forEach(el => observer.observe(el));
-  </script>
- 
+ <script src="main.js"></script>
 </body>
 </html>
  
