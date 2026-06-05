@@ -211,4 +211,26 @@ const sectionObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.4 });
  
 sections.forEach(s => sectionObserver.observe(s));
+
+/* ── THEME TOGGLE ── */
+const themeBtn = document.getElementById('theme-toggle');
  
+// Ripristina preferenza salvata
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'light') {
+  document.body.classList.add('light');
+  themeBtn.textContent = '🌙';
+}
+ 
+themeBtn.addEventListener('click', () => {
+  const isLight = document.body.classList.toggle('light');
+  themeBtn.textContent = isLight ? '🌙' : '☀️';
+  localStorage.setItem('theme', isLight ? 'light' : 'dark');
+ 
+  // Piccola animazione di rotazione
+  themeBtn.style.transition = 'transform 0.4s ease, border-color 0.2s, background 0.2s';
+  themeBtn.style.transform = 'rotate(360deg)';
+  setTimeout(() => {
+    themeBtn.style.transform = '';
+  }, 400);
+});
